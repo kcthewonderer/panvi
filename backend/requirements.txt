@@ -1,0 +1,9 @@
+flask
+flask-cors
+firebase-admin
+python-dotenv
+google-cloud-vision
+veryfi
+ultralytics
+opencv-python
+werkzeug

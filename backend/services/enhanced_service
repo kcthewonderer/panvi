@@ -1,0 +1,29 @@
+from services.storage_service import StorageService
+from flask import jsonify, request
+from io import BytesIO
+from ..app import panvi
+from storage_service import StorageException
+
+
+# Example usage
+service = StorageService()
+
+# With Flask request
+@panvi.route('/upload', methods=['POST'])
+def upload_image():
+    user_id = get_authenticated_user()  # Your auth function
+    image_file = request.files['image']
+    
+    # Convert to BytesIO for validation
+    file_stream = BytesIO(image_file.read())
+    file_stream.seek(0)
+    
+    try:
+        result = service.upload_food_image(
+            user_id=user_id,
+            file_stream=file_stream,
+            content_type=image_file.content_type
+        )
+        return jsonify(result), 200
+    except StorageException as e:
+        return jsonify({"error": str(e)}), 400

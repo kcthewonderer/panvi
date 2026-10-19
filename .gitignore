@@ -1,0 +1,60 @@
+# ---- Secrets: never commit ----
+.env
+*.env
+!.env.example
+secrets/
+backend/secrets/
+*adminsdk*.json
+*service-account*.json
+*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.json
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+android/key.properties
+*.jks
+*.keystore
+
+# ---- Python backend ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+food-env/
+foodvenv/
+backend/runs/
+*.pt
+*.onnx
+*.weights
+backend/darknet/
+Files/
+
+# ---- Flutter / Dart ----
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+**/doc/api/
+.metadata.local
+*.iml
+*.ipr
+*.iws
+.idea/
+.DS_Store
+
+# ---- Android ----
+android/local.properties
+android/.gradle/
+android/app/debug
+android/app/profile
+android/app/release
+
+# ---- iOS ----
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/ephemeral/
+ios/Runner/GeneratedPluginRegistrant.*
+**/xcuserdata/
